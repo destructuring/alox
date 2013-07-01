@@ -1,3 +1,17 @@
 #!/usr/bin/env ruby
 
 require_relative '../vendor/bundle/bundler/setup'
+
+require 'pp'
+
+# look for /alox-XXX-0.0.0/lib and map XXX => gem root
+aloxes = ($:.collect {|lib| lib.match(%r{(.*?/alox-([^-]+)-[^/]+)/lib}) }).compact.inject({}) {|acc, m| acc[m[2]] =  m[1]; acc }
+
+ENV['PATH'] = aloxes.inject(ENV['PATH']) {|acc, alox|
+  _, root = alox
+  "#{ENV['PATH']}:#{root}/aloxbin:#{root}/aloxec"
+}
+
+if ARGV.length > 0
+  system(*ARGV)
+end
