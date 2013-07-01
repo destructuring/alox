@@ -10,11 +10,11 @@
 shome="$(unset CDPATH; cd -P -- "$(dirname -- "$BASH_SOURCE")/.." && pwd -P)"
 
 # load a jason bourne library
-source "_jason"
+source _jason
 
 # entry point
 function main {
   echo "$@"
 }
 
-main "$@"
+require _sub "$BASH_SOURCE" "$@"
