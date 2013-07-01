@@ -1,0 +1,4 @@
+---
+remotes:
+  primary: git@github.com:destructuring/alox
+  rb: git@github.com:destructuring/rb-helper
