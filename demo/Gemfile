@@ -1,6 +1,6 @@
 source "https://rubygems.org"
 
-gem "alox"
+gem "alox", :path => ".."
 gem "alox-jason"
 
 # vim: set ft=ruby:
