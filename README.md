@@ -1,3 +1,16 @@
+# Getting Started
+
+The `alox` repo demos a few alox gems.
+
+First, bundle the gems:
+
+    bundle exec --local --path vendor/bundle --standalone
+
+Then run `bin/alox` with `BUNDLE_GEMFILE` set, as if `bundle exec` was
+run:
+
+    env BUNDLE_GEMFILE="$(pwd)/Gemfile" bin/alox
+
 LICENSE
 -------
 
