@@ -1,6 +1,6 @@
 #!/usr/bin/env ruby
 
-require_relative '../vendor/bundle/bundler/setup'
+require File.expand_path('../../vendor/bundle/bundler/setup', __FILE__)
 
 require 'pp'
 
