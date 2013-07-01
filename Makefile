@@ -2,7 +2,7 @@ RUBY := ruby
 
 all:
 	@bin/bundle --local --standalone --path vendor/bundle
-	@time env BUNDLE_GEMFILE=$(PWD)/Gemfile bin/alox libexec/alox-test a b c
+	@time $(shell bundle show alox)/bin/alox libexec/alox-test a b c
 
 clean:
 	@rm -rf vendor/ruby
