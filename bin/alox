@@ -9,7 +9,7 @@ aloxes = ($:.collect {|lib| lib.match(%r{(.*?/alox-([^-]+)-[^/]+)/lib}) }).compa
 
 ENV['PATH'] = aloxes.inject(ENV['PATH']) {|acc, alox|
   _, root = alox
-  "#{root}/aloxbin:#{root}/aloxec:#{ENV['PATH']}"
+  "#{root}/aloxbin:#{root}/aloxec:#{acc}"
 }
 
 if ARGV.length > 0
