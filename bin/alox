@@ -2,14 +2,16 @@
 
 require File.expand_path('../../vendor/bundle/bundler/setup', __FILE__)
 
-require 'pp'
-
-# look for /alox-XXX-0.0.0/lib and map XXX => gem root
-aloxes = ($:.collect {|lib| lib.match(%r{(.*?/alox-([^-]+)-[^/]+)/lib}) }).compact.inject({}) {|acc, m| acc[m[2]] =  m[1]; acc }
+# look for /XXX/lib and map XXX => gem root
+aloxes = ($:.collect {|lib| lib.match(%r{(.*?/([^/]+))/lib}) }).compact.inject({}) {|acc, m| acc[m[2]] =  m[1]; acc }
 
 ENV['PATH'] = aloxes.inject(ENV['PATH']) {|acc, alox|
   _, root = alox
-  "#{root}/aloxbin:#{root}/aloxec:#{acc}"
+  if File.directory? "#{root}/aloxec"
+    "#{root}/aloxec:#{acc}"
+  else
+    acc
+  end
 }
 
 if ARGV.length > 0
