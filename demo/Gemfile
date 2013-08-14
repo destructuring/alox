@@ -3,4 +3,6 @@ source "https://rubygems.org"
 gem "alox", :path => ".."
 gem "alox-jason"
 
+gemspec
+
 # vim: set ft=ruby:
