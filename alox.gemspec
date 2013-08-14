@@ -15,5 +15,5 @@ Gem::Specification.new do |s|
   s.date        = %q{2013-06-31}
   s.executables   = ["alox" ]
   s.require_paths = ["lib"]
-  s.files = %w(LICENSE VERSION README.md) + Dir.glob("libexec/**/*") + Dir.glob("lib/**/*") + Dir.glob("sbin/**/*")
+  s.files = %w(LICENSE VERSION README.md) + Dir.glob("exec/**/*") + Dir.glob("lib/**/*")
 end
