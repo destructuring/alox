@@ -7,9 +7,9 @@ all: $(BUNDLER) $(GEM)
 	@echo BUNDLER = $(BUNDLER)
 	@echo GEM = $(GEM)
 	@$(BUNDLER) --local --standalone --path vendor/bundle
-	@mkdir -p bin
-	@ln -nfs "$(shell $(BUNDLER) show alox | tail -1)/bin/alox"  bin/
-	time bin/alox alox-test uname -a
+	time bin/demo uname -a
+	time bin/demo runner uname -a
+	time bin/demo meh
 
 vendor/ruby/bin/bundle: $(GEM)
 	@cd vendor && $(GEM) install bundler -v 1.3.5

@@ -1,6 +1,6 @@
 #!/usr/bin/env ruby
 
-require File.expand_path('../../vendor/bundle/bundler/setup', __FILE__)
+require File.expand_path('../../vendor/bundle/bundler/setup', ENV['ALOX_HOME'] || __FILE__)
 
 # look for /XXX/lib and map XXX => gem root
 aloxes = ($:.collect {|lib| lib.match(%r{(.*?/([^/]+))/lib}) }).compact.inject({}) {|acc, m| acc[m[2]] =  m[1]; acc }
@@ -19,6 +19,4 @@ ENV['PATH'] = aloxes.inject(ENV['PATH']) {|acc, alox|
   acc
 }
 
-if ARGV.length > 0
-  system([File.expand_path("../../exec/alox-runner" ] + ARGV)
-end
+system("_sub", *ARGV)

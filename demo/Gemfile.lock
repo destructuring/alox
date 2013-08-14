@@ -11,7 +11,7 @@ PATH
 GEM
   remote: https://rubygems.org/
   specs:
-    alox-jason (0.0.26)
+    alox-jason (0.0.28)
 
 PLATFORMS
   ruby
