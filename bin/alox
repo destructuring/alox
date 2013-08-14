@@ -7,11 +7,16 @@ aloxes = ($:.collect {|lib| lib.match(%r{(.*?/([^/]+))/lib}) }).compact.inject({
 
 ENV['PATH'] = aloxes.inject(ENV['PATH']) {|acc, alox|
   _, root = alox
+
   if File.directory? "#{root}/aloxec"
-    "#{root}/aloxec:#{acc}"
-  else
-    acc
+    acc="#{root}/aloxec:#{acc}"
   end
+
+  if File.directory? "#{root}/exec"
+    acc="#{root}/exec:#{acc}"
+  end
+
+  acc
 }
 
 if ARGV.length > 0
