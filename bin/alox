@@ -1,7 +1,5 @@
 #!/usr/bin/env ruby
 
-require File.expand_path('../../vendor/bundle/bundler/setup', ENV['ALOX_HOME'] || __FILE__)
-
 # look for /XXX/lib and map XXX => gem root
 aloxes = ($:.collect {|lib| lib.match(%r{(.*?/([^/]+))/lib}) }).compact.inject({}) {|acc, m| acc[m[2]] =  m[1]; acc }
 

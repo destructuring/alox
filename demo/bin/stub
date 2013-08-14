@@ -1,3 +1,3 @@
 #!/bin/bash
 
-exec env ALOX_HOME="$(cd -P -- "$(dirname -- "$BASH_SOURCE")" && pwd -P)/XXX" "$(bundle show alox)"/bin/alox "$(basename $0)" "$@"
+exec bundle exec alox "$(basename "$0")" "$@"
