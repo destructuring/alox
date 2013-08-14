@@ -20,5 +20,5 @@ ENV['PATH'] = aloxes.inject(ENV['PATH']) {|acc, alox|
 }
 
 if ARGV.length > 0
-  system(*ARGV)
+  system([File.expand_path("../../exec/alox-runner" ] + ARGV)
 end
