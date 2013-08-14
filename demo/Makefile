@@ -1,7 +1,9 @@
-RUBY := /usr/bin/ruby
+RUBY := $(shell which ruby ruby 2>&- || true)
 BUNDLER := $(shell which bundle 2>&1 || echo vendor/ruby/bin/bundle)
 
 all: $(BUNDLER)
+	@echo RUBY = $(RUBY)
+	@echo BUNDLER = $(BUNDLER)
 	@$(BUNDLER) --quiet --local --standalone --path vendor/bundle
 	@mkdir -p bin
 	@ln -nfs "$(shell bundle show alox)/bin/alox"  bin/

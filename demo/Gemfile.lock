@@ -1,12 +1,12 @@
 PATH
   remote: ..
   specs:
-    alox (0.0.4)
+    alox (0.0.7)
 
 GEM
   remote: https://rubygems.org/
   specs:
-    alox-jason (0.0.25)
+    alox-jason (0.0.26)
 
 PLATFORMS
   ruby
