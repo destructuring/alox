@@ -9,7 +9,7 @@ all: $(BUNDLER) $(GEM)
 	@$(BUNDLER) --local --standalone --path vendor/bundle
 	@mkdir -p bin
 	@ln -nfs "$(shell $(BUNDLER) show alox | tail -1)/bin/alox"  bin/
-	bin/alox libexec/alox-test uname -a
+	time bin/alox libexec/alox-test uname -a
 
 vendor/ruby/bin/bundle: $(GEM)
 	@cd vendor && $(GEM) install bundler -v 1.3.5
