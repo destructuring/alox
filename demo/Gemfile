@@ -1,7 +1,7 @@
 source "https://rubygems.org"
 
 gem "alox", :path => ".."
-gem "alox-jason" #, :path => "../../alox-jason"
+gem "alox-jason"
 
 gemspec
 
