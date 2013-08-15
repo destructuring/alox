@@ -1,1 +1,22 @@
-demo
+#!/bin/bash
+
+#/ NAME
+#/     meh -- alox demo
+#/
+#/ SYNOPSIS
+#/     meh ...
+
+# figure out the project root under which bin, lib live
+shome="$(unset CDPATH; cd -P -- "$(dirname -- "$BASH_SOURCE")/.." && pwd -P)"
+
+# load a jason bourne library
+source _jason
+require _demo
+
+# entry point
+function main {
+  echo "running a demo sub-command: runner"
+  exec "$@"
+}
+
+require _sub "$BASH_SOURCE" "$@"
