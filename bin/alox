@@ -17,4 +17,4 @@ ENV['PATH'] = aloxes.inject(ENV['PATH']) {|acc, alox|
   acc
 }
 
-system("_sub", *ARGV)
+exec("_sub", *ARGV)
